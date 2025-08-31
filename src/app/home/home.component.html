@@ -1,0 +1,39 @@
+<div class="header-section">
+    <h1>🌿 Train Yourself Yoga Studio 🌿</h1>
+    <p>Discover your perfect yoga flow with expert instructors and tailored courses.</p>
+  </div>
+  
+  <section class="courses-section">
+    <h2>🧘‍♀️ Our Courses</h2>
+    <div class="courses-container">
+      <div *ngFor="let course of courses" class="course-card">
+        <div class="card-front">
+          <h3>{{ course.name }}</h3>
+          <p>{{ course.description }}</p>
+          <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+          <p class="price">{{ course.price }}</p>
+          <button class="cta-btn">Enroll Now</button>
+        </div>
+        <div class="card-back">
+          <h4>Why Choose This?</h4>
+          <p>✨ Boost your flexibility & strength.</p>
+          <p>🌟 Suitable for all levels.</p>
+          <p>🧘‍♂️ Relax, rejuvenate, repeat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="instructors-section">
+    <h2>👩‍🏫 Meet Our Instructors</h2>
+    <div class="instructors-container">
+      <div *ngFor="let instructor of instructors" class="instructor-card">
+        <div class="instructor-photo">
+          <img [src]="instructor.photo" alt="{{ instructor.name }}" />
+        </div>
+        <h3>{{ instructor.name }}</h3>
+        <p>{{ instructor.bio }}</p>
+        <button class="cta-btn">Book a Session</button>
+      </div>
+    </div>
+  </section>

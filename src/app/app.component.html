@@ -1,0 +1,43 @@
+<!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">🚀 Train Yourself</div>
+  <ul class="nav-links">
+    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" (click)="toggleMenu()">☰</div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [class.show]="menuOpen">
+  <a routerLink="/" (click)="toggleMenu()">Home</a>
+  <a routerLink="/login" (click)="toggleMenu()">Login</a>
+  <a routerLink="/contact" (click)="toggleMenu()">Contact Us</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>💪 Train Hard, Live Strong</h1>
+  <p>Unleash your potential with customized fitness programs.</p>
+  <button class="cta-btn" routerLink="/login">Join Us Now</button>
+</section>
+
+<!-- Courses Section -->
+<section class="courses">
+  <h2>Our Programs</h2>
+  <div class="course-grid">
+    <div class="course-card" *ngFor="let course of courses">
+      <h3>{{ course.name }}</h3>
+      <p>{{ course.description }}</p>
+      <button class="cta-btn">Enroll Now</button>
+    </div>
+  </div>
+</section>
+
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Train Yourself. All Rights Reserved.</p>
+</footer>
